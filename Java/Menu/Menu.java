@@ -17,6 +17,15 @@ public class Menu {
         System.out.println("Elige una opción:");
         int opcion = sc.nextInt();
         sc.close();
-    }
 
+        switch (opcion) {
+            case 1:
+            // 1º Introduce cuantos productos quieres añadir al código
+                System.out.println("Introduce el número de productos que quieres añadir:");
+                int numeroProductos = sc.nextInt();
+                Producto[] numeroProductosIntroducidos = new Producto[numeroProductos];
+                System.out.println("Se ha creado espacio para " + numeroProductos + " productos");
+                break;
+        }
+    }
 }
