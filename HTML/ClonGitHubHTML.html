@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación Estilo GitHub</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="ClonGitHubHTML.css">
+</head>
+
+<body>
+    <header data-aos="fade-down" data-aos-duration="1000" data-aos="fade-up">
+        <h1>📌 Proyecto: Mi Presentación en HTML</h1>
+        <p>Autor: <strong>Tu Nombre</strong></p>
+        <p>Fecha: <strong>29 de enero de 2025</strong></p>
+    </header>
+
+
+    <section data-aos="fade-up" data-aos-duration="1000">
+        <h2>📖 Introducción</h2>
+        <p>Bienvenido a esta presentación. Aquí explicaremos los puntos clave de nuestro proyecto.</p>
+    </section>
+
+    <section data-aos="fade-left" data-aos-duration="1000">
+        <h2>📌 Objetivos</h2>
+        <ul>
+            <li>Explicar el propósito del proyecto.</li>
+            <li>Mostrar la estructura de los archivos.</li>
+            <li>Proveer ejemplos de código.</li>
+        </ul>
+    </section>
+
+    <section data-aos="fade-right" data-aos-duration="1000">
+        <h2>📂 Estructura del Proyecto</h2>
+        <pre>
+        /mi-proyecto
+        ├── index.html
+        ├── README.md
+        ├── img/
+        ├── css/
+        ├── js/
+        </pre>
+    </section>
+
+    <section data-aos="zoom-in" data-aos-duration="1000">
+        <section>
+            <h2>🛠️ Ejemplos de Código</h2>
+            
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Rust - Gestión de Tareas</span>
+                    <button class="copy-btn" onclick="copyCode(this)">📋 Copiar</button>
+                </div>
+                <pre><code class="language-rust">use std::collections::VecDeque;
+
+struct Task {
+    id: u32,
+    description: String,
+    completed: bool,
+}
+
+struct TaskManager {
+    tasks: VecDeque<Task>,
+    next_id: u32,
+}
+
+impl TaskManager {
+    fn new() -> Self {
+        TaskManager {
+            tasks: VecDeque::new(),
+            next_id: 1,
+        }
+    }
+
+    fn add_task(&mut self, description: String) -> u32 {
+        let task = Task {
+            id: self.next_id,
+            description,
+            completed: false,
+        };
+        self.next_id += 1;
+        self.tasks.push_back(task);
+        task.id
+    }
+
+    fn complete_task(&mut self, id: u32) -> Option<&Task> {
+        if let Some(task) = self.tasks.iter_mut().find(|t| t.id == id) {
+            task.completed = true;
+            Some(task)
+        } else {
+            None
+        }
+    }
+
+    fn list_tasks(&self) {
+        for task in &self.tasks {
+            println!("Task #{}: {} [{}]",
+                task.id,
+                task.description,
+                if task.completed { "✓" } else { "✗" }
+            );
+        }
+    }
+}</code></pre>
+            </div>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Java - Sistema Bancario</span>
+                    <button class="copy-btn" onclick="copyCode(this)">📋 Copiar</button>
+                </div>
+                <pre><code class="language-java">import java.util.ArrayList;
+import java.util.List;
+
+class BankAccount {
+    private String accountNumber;
+    private double balance;
+    private List<Transaction> transactions;
+
+    public BankAccount(String accountNumber) {
+        this.accountNumber = accountNumber;
+        this.balance = 0.0;
+        this.transactions = new ArrayList<>();
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            transactions.add(new Transaction("DEPOSIT", amount));
+        } else {
+            throw new IllegalArgumentException("Amount must be positive");
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            transactions.add(new Transaction("WITHDRAW", amount));
+        } else {
+            throw new IllegalArgumentException("Invalid withdrawal amount");
+        }
+    }
+
+    public void printStatement() {
+        System.out.println("Account: " + accountNumber);
+        System.out.println("Current Balance: $" + String.format("%.2f", balance));
+        System.out.println("\nTransaction History:");
+        for (Transaction t : transactions) {
+            System.out.println(t);
+        }
+    }
+}
+
+class Transaction {
+    private String type;
+    private double amount;
+    private long timestamp;
+
+    public Transaction(String type, double amount) {
+        this.type = type;
+        this.amount = amount;
+        this.timestamp = System.currentTimeMillis();
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s: $%.2f", type, amount);
+    }
+}</code></pre>
+            </div>
+        </section>
+    <section data-aos="fade-up" data-aos-duration="1000">
+        <h2>📢 Conclusión</h2>
+        <p>Hemos cubierto la estructura y objetivos del proyecto. ¡Gracias por tu atención!</p>
+    </section>
+
+    <footer data-aos="fade-up" data-aos-duration="800">
+        <p>© 2023 Mi Presentación. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Importante: El script de inicialización debe ir justo antes de cerrar el body -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100,
+                easing: 'ease-in-out'
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+.code-container {
+    margin: 25px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.code-header span {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.copy-btn {
+    padding: 5px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+    background: var(--background-color);
+}
+
+.code-container pre {
+    margin: 0;
+    border-radius: 0 0 8px 8px;
+}
+
+.code-container code {
+    padding: 15px;
+    display: block;
+}

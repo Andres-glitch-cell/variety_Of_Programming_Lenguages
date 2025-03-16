@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ClonGitHubHTML.css">
+    <script src="ClonGitHubHTML.js"></script>
+    <title>Data Analytics Project</title>
+</head>
+<body>
+    <nav class="header">
+        <div class="header-logo">
+            <svg height="32" viewBox="0 0 24 24" width="32">
+                <path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v-2h-2v2zm0-4h2V7h-2v6z" fill="white"/>
+            </svg>
+            <span class="header-title">Data Analytics Hub</span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="repo-info">
+                <h2>Data Analysis Project</h2>
+                <p>Public</p>
+            </div>
+            <div class="file-explorer">
+                <div class="file-header">
+                    <span>Files</span>
+                    <button class="btn" onclick="window.location.href='ClonGitHubHTML.html'">Switch Project ▾</button>
+                </div>
+                <div class="file-list">
+                    <div class="file-item folder">
+                        <span>📁 data</span>
+                    </div>
+                    <div class="file-item">
+                        <span>📄 analysis.py</span>
+                    </div>
+                    <div class="file-item">
+                        <span>📄 requirements.txt</span>
+                    </div>
+                    <div class="file-item">
+                        <span>📄 visualization.ipynb</span>
+                    </div>
+                    <div class="file-item">
+                        <span>📄 dataset.csv</span>
+                    </div>
+                    <div class="file-item folder">
+                        <span>📁 notebooks</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="file-header">
+                <div class="breadcrumb">
+                    data-analysis / analysis.py
+                </div>
+                <div class="actions">
+                    <button class="btn">Edit</button>
+                    <button class="btn">Raw</button>
+                    <button class="btn">Download</button>
+                </div>
+            </div>
+            <div class="code-editor">
+                <pre><code id="editor" class="language-python" contenteditable="true">
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+def analyze_data():
+    # Load dataset
+    df = pd.read_csv('dataset.csv')
+    
+    # Perform analysis
+    results = df.describe()
+    
+    # Create visualizations
+    plt.figure(figsize=(10, 6))
+    df['values'].hist()
+    plt.title('Data Distribution')
+    plt.savefig('analysis_results.png')
+    
+    return results
+                </code></pre>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <settings>
+        <name>Code Portfolio</name>
+        <version>1.0.0</version>
+        <author>Your Name</author>
+        <description>A professional code portfolio showcase</description>
+    </settings>
+    <features>
+        <feature>
+            <name>Theme Switching</name>
+            <status>enabled</status>
+        </feature>
+        <feature>
+            <name>Code Highlighting</name>
+            <status>enabled</status>
+        </feature>
+        <feature>
+            <name>File Navigation</name>
+            <status>enabled</status>
+        </feature>
+    </features>
+</project>
